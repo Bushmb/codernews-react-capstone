@@ -43,7 +43,7 @@ app.set('view engine', 'html');
 
 // *** static directory *** //
 // app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.resolve(__dirname, '../client/build')))
+app.use(express.static(path.join(__dirname, '../client/build')))
 
 // *** config middleware *** //
 app.use(logger('dev'));
