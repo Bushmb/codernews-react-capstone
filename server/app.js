@@ -56,7 +56,7 @@ app.use(cookieParser());
 //   app.use(express.static('client2/build'));
 // }
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../client/public')));
 // app.use(session({
 //   secret: 'shhhhhh',
 //   resave: true,
