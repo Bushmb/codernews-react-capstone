@@ -5,7 +5,7 @@ var passportTwitter = require('../auth/twitter');
 
 
 router.get('*', function(req, res, next) {
-  const index = path.resolve(__dirname, '../client/build', 'index.html');
+  const index = path.resolve(__dirname, '../../client/build', 'index.html');
   res.sendFile(index);
 });
 
