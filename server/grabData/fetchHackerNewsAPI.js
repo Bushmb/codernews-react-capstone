@@ -17,7 +17,7 @@ function fetchHackerNewsAPI() {
 	const topics = ['javascript', 'redux+react', 'perl', 'python', 'ruby', 'angular'];
 
 	topics.forEach(function(topic){
-		const url = `http://hn.algolia.com/api/v1/search_by_date?query=${topic}&hitsPerPage=50&tags=story`
+		const url = `https://hn.algolia.com/api/v1/search_by_date?query=${topic}&hitsPerPage=50&tags=story`
 		const results = [];
 		request(url, function(error, response, body) {
 			const data = JSON.parse(body);
