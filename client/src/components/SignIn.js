@@ -29,7 +29,8 @@ class SignIn extends Component {
 			})
 	}
 
-	signInWithTwitter() {
+	signInWithTwitter(e) {
+		e.preventDefault()
 		const provider = new firebase.auth.TwitterAuthProvider();
 		firebaseApp.auth().signInWithPopup(provider).then(result => {
 
@@ -82,7 +83,7 @@ class SignIn extends Component {
 					<button
 						className="btn btn-info"
 						type="button"
-						onClick={() => this.signInWithTwitter()}
+						onClick={(e) => this.signInWithTwitter(e)}
 					>
 					Sign In with Twitter
 					</button>
