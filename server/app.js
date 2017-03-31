@@ -56,12 +56,12 @@ app.use(cookieParser());
 //   app.use(express.static('client2/build'));
 // }
 
-app.use(express.static(path.join(__dirname, '../client/public')));
-app.use(session({
-  secret: 'shhhhhh',
-  resave: true,
-  saveUninitialized: true
-}));
+// app.use(express.static(path.join(__dirname, '../client/public')));
+// app.use(session({
+//   secret: 'shhhhhh',
+//   resave: true,
+//   saveUninitialized: true
+// }));
 
 
 app.use(passport.initialize());
