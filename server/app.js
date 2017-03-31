@@ -36,9 +36,9 @@ const dbconnection = process.env.NODE_ENV = 'production' ?
 mongoose.connect(dbconnection);
 
 // *** view engine *** //
-// var swig = new swig.Swig();
-// app.engine('html', swig.renderFile);
-// app.set('view engine', 'html');
+var swig = new swig.Swig();
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
 
 
 // *** static directory *** //
