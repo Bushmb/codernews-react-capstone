@@ -7,16 +7,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var swig = require('swig');
-var passport = require('passport');
-var session = require('express-session');
+// var swig = require('swig');
+// var passport = require('passport');
+// var session = require('express-session');
 var mongoose = require('mongoose');
 
 
 // *** routes *** //
 var routes = require('./routes/index');
 var scheduleData = require('./grabData/scheduleData');
-var dashboard = require('./routes/dashboard');
+// var dashboard = require('./routes/dashboard');
 var hacker = require('./routes/hacker');
 
 mongoose.Promise = global.Promise;
@@ -28,35 +28,30 @@ var app = express();
 
 // *** mongoose *** //
 // mongodb://<dbuser>:<dbpassword>@ds149030.mlab.com:49030/codernews
-
 const dbconnection = process.env.NODE_ENV = 'production' ?
   `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@ds149030.mlab.com:49030/codernews` :
   'mongodb://localhost/codernews'
 
 mongoose.connect(dbconnection);
 
+
 // *** view engine *** //
-var swig = new swig.Swig();
-app.engine('html', swig.renderFile);
-app.set('view engine', 'html');
+// var swig = new swig.Swig();
+// app.engine('html', swig.renderFile);
+// app.set('view engine', 'html');
 
 
 // *** static directory *** //
 // app.set('views', path.join(__dirname, 'views'));
-// app.use(express.static(path.join(__dirname, '../client/build')))
+app.use(express.static(path.join(__dirname, '../client/build')))
 
 // *** config middleware *** //
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 
-// // Express only serves static assets in production
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static('client2/build'));
-// }
-
-app.use(express.static(path.join(__dirname, '../client/public')));
+// app.use(express.static(path.join(__dirname, '../client/public')));
 // app.use(session({
 //   secret: 'shhhhhh',
 //   resave: true,
@@ -64,12 +59,12 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 // }));
 
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // *** main routes *** //
 
-app.use('/dashboard', isLoggedIn, dashboard);
+// app.use('/dashboard', isLoggedIn, dashboard);
 
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
@@ -97,10 +92,11 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
+    // res.send("Error", err);
+    // res.render('error', {
+    //   message: err.message,
+    //   error: err
+    // });
   });
 }
 
@@ -121,9 +117,9 @@ module.exports = app;
 })();
 
 
-function isLoggedIn(req, res, next) {
-  console.log("middleware hit")
-  if (req.isAuthenticated())
-      return next();
-  res.redirect('/');
-}
+// function isLoggedIn(req, res, next) {
+//   console.log("middleware hit")
+//   if (req.isAuthenticated())
+//       return next();
+//   res.redirect('/');
+// }
