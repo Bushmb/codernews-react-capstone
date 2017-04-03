@@ -113,7 +113,7 @@ if (app.get('env') === 'development') {
 module.exports = app;
 
 (function() {
-  scheduleData.init();
+  // scheduleData.init();
 })();
 
 
