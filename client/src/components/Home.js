@@ -39,9 +39,10 @@ class Home extends Component {
 		firebaseApp.auth().onAuthStateChanged(user => {
 			if(user) {
 				console.log('user has signed in', user.uid);
-				isAuthenticated();
+				// isAuthenticated();
 				window.localStorage.setItem(storageKey, user.uid);
 				this.setState({uid: user.uid})
+
 			} else {
 				console.log('user has signed out');
 				window.localStorage.removeItem(storageKey);
@@ -57,7 +58,7 @@ class Home extends Component {
 		  		<div>
 		  			<Switch>
 			  			<Route exact path="/" render={() => (
-				  		  isAuthenticated() ? (
+				  		  this.state.uid ? (
 				  		    <App />
 				  		  ) : (
 				  		    <SignIn />
