@@ -3,43 +3,25 @@ const schedule = require('node-schedule');
 const fetchHackerNewsAPI = require('./fetchHackerNewsAPI');
 const scrapedData = require('../models/scrapedData');
 
-// set up default mongoose connection
-// get it working with mLab
-
-// mongoose.Promise = global.Promise;
-// const mongoDB = 'mongodb://localhost/codernews';
-// mongoose.connect(mongoDB);
-
-// // get the default connetion
-// const db = mongoose.connection;
-
-// //bind connection to error event
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
 const scheduleData = {
 	scheduleJob: function() {
-		// this rule is standard cron syntax for 
-		// once every minute.
-		// rule = '';
 
-		// once every 15 mintues.
-		rule = '*/15 * * * *';
-		// mongoDB.remove({}, console.log("DB is clean"));
-
-		scrapedData.remove({}, function(err,removed) {
-		console.log("Clearing DB");
-		});
-		
+		// run on initial load
 		fetchHackerNewsAPI();
-		
 
+		// this rule is standard cron syntax for 
+		// once every 15 mintues.
+		const rule = '*/15 * * * *';
+		
 		const job = schedule.scheduleJob(rule, function() {
 
 			// wiping database to only show latest articles
+			scrapedData.remove({}, function(err,removed) {
+			console.log("Clearing DB");
+			});
 			
-
-			//this is where the request call should be made to populate the db
-			// fetchHackerNewsAPI();
+			// run request to fetch new data
+			fetchHackerNewsAPI();
 			
 		});
 	},
@@ -49,7 +31,30 @@ const scheduleData = {
 	}
 };
 
+// function getDateTime() {
 
+//     var date = new Date();
+
+//     var hour = date.getHours();
+//     hour = (hour < 10 ? "0" : "") + hour;
+
+//     var min  = date.getMinutes();
+//     min = (min < 10 ? "0" : "") + min;
+
+//     var sec  = date.getSeconds();
+//     sec = (sec < 10 ? "0" : "") + sec;
+
+//     var year = date.getFullYear();
+
+//     var month = date.getMonth() + 1;
+//     month = (month < 10 ? "0" : "") + month;
+
+//     var day  = date.getDate();
+//     day = (day < 10 ? "0" : "") + day;
+
+//     return year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec;
+
+// }
 
 module.exports = scheduleData;
 

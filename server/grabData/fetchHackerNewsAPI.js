@@ -13,11 +13,12 @@ function fetchHackerNewsAPI() {
 
 	// scrapedData.remove({}, function(err,removed) {
 	// });
+	console.log("Request to Hacker News API started");
 
 	const topics = ['javascript', 'redux+react', 'perl', 'python', 'ruby', 'angular'];
 
 	topics.forEach(function(topic){
-		const url = `https://hn.algolia.com/api/v1/search_by_date?query=${topic}&hitsPerPage=50&tags=story`
+		const url = `https://hn.algolia.com/api/v1/search_by_date?query=${topic}&hitsPerPage=300&tags=story`
 		const results = [];
 		request(url, function(error, response, body) {
 			const data = JSON.parse(body);
@@ -86,7 +87,7 @@ function fetchHTML(results) {
 				unfluffed = unfluff(body)
 			}
 			catch(e) {
-				console.log(e)
+				// console.log(e)
 			}
 			
 			if(unfluffed) {
@@ -116,7 +117,7 @@ function fetchHTML(results) {
 				if (img == "http://www.syntaxsuccess.com/img/bio.jpg") {
 					img = "noimage";
 				}
-				console.log("IMAGE TAG!", img)
+				// console.log("IMAGE TAG!", img)
 				// "https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180";
 			
 				// Create unique story id from stripped and shortened url
@@ -152,13 +153,14 @@ function fetchHTML(results) {
 		   	    if(isBlocked === "No") {
 
 			   	    if(Object.keys(story).every(key => story[key])) {
-		   	    	    console.log("STORY_ID!!!!!", story.story_id);
+		   	    	    // console.log("STORY_ID!!!!!", story.story_id);
 			   	    	scrapedData.count({story_id: story.story_id}, function (err, count){ 
 			   	    	
 			   	    	    if(!count) {
 			    	    		scrapedData.create(story, function (err, savedStory) {
 				    	    		// console.log("STORY_ID!!!!!", story.story_id);
 				    	    		// console.log("Count", count, story.story_id)
+				    	    		
 				    	    		if (err) {
 				    	    			// console.log(err);
 				    	    		}
@@ -176,6 +178,7 @@ function fetchHTML(results) {
 	scrapedData.count({}, function(err, count){
 	    // console.log( "TOTAL Number of docs: ", count );
 	});
+	console.log("Request 1 of 6 ... done")
 };
 
 

@@ -30,15 +30,17 @@ class SignIn extends Component {
 	}
 
 	signInWithTwitter(e) {
-		e.preventDefault()
+		e.preventDefault();
 		const provider = new firebase.auth.TwitterAuthProvider();
+		provider.setCustomParameters({
+			'prompt': 'select_account'
+		});
 		firebaseApp.auth().signInWithPopup(provider).then(result => {
 
 		  const token = result.credential.accessToken;
 		  const secret = result.credential.secret;
 		  const user = result.user;
 		  this.setState({token, secret, user});
-		  console.log('STATE', this.state);
 	  
 		}).catch(error => {
 
