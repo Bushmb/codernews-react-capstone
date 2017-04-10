@@ -4,8 +4,10 @@ var mongoose = require('mongoose');
 const scrapedData = require('../models/scrapedData');
 
 router.get('/', function(req, res, next)	{
+
+
     
-	scrapedData.find({}, function(err, scrapeddatas) {
+	scrapedData.find({}, null, {sort: { date: -1 }}, function(err, scrapeddatas) {
         // console.log("HITTING HERE");
         // console.log('=============', Array.isArray(scrapeddatas))
 

@@ -37,8 +37,7 @@ export default function MakeCard (props) {
 		  </CardText>
 	      <CardText className="text-description">{ props.desc }</CardText>
 	  		<div className="link-buttons" style={{ float: 'right' }}>&#x1F499; {props.points}</div>
-	  		<MyModal className="link-buttons" style={{ float: 'right' }} url={props.orig_url} title={props.title} />
-	           	
+	  		<MyModal className="link-buttons" style={{ float: 'right' }} url={props.orig_url} title={props.title} />	           	
 	    </CardBlock>
 	</Card>
   )

@@ -19,6 +19,11 @@ class MyModal extends Component {
     });
   }
 
+  // click(e) {
+  //   e.preventDefault();
+  //   window.open(this.props.url, '_blank');
+  // }
+
   render() {
     const options = { 
       hashtag: "CodingNews",
@@ -37,7 +42,7 @@ class MyModal extends Component {
           <ModalFooter>
            
             <Share url={this.props.url} options={options} />
-            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+            <Button color="primary" onClick={(e) => {e.preventDefault(); window.open(this.props.url, '_blank')}}>Original Page</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>

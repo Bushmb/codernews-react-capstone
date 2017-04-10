@@ -22,7 +22,6 @@ export function scrapedDataFetchData(url) {
         dispatch(scrapedDataIsLoading(true));
         fetch(url)
             .then((response) => {
-                console.log(response);
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }

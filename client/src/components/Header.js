@@ -3,13 +3,11 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reac
 import firebase from 'firebase';
 import './App.css';
 
-
-
 class Header extends Component {
 
   signUserOut() {
     firebase.auth().signOut().then(function() {
-      console.log("info")
+      console.log("Signing Out")
     }).catch(function(error) {
       console.log(error)
     });
@@ -37,6 +35,7 @@ class Header extends Component {
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <button
+                  style={{ zIndex: 5000}}
                   className="btn btn-info btn-signout"
                   type="button"
                   onClick={() => this.signUserOut()}

@@ -21,6 +21,10 @@ function fetchHackerNewsAPI() {
 		const url = `https://hn.algolia.com/api/v1/search_by_date?query=${topic}&hitsPerPage=300&tags=story`
 		const results = [];
 		request(url, function(error, response, body) {
+			if(error) {
+				console.log(error);
+			}
+			
 			const data = JSON.parse(body);
 			const items = data.hits;
 			let story = {};
@@ -160,7 +164,7 @@ function fetchHTML(results) {
 			    	    		scrapedData.create(story, function (err, savedStory) {
 				    	    		// console.log("STORY_ID!!!!!", story.story_id);
 				    	    		// console.log("Count", count, story.story_id)
-				    	    		
+
 				    	    		if (err) {
 				    	    			// console.log(err);
 				    	    		}

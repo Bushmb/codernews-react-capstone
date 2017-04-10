@@ -38,13 +38,13 @@ class Home extends Component {
 	componentDidMount() {
 		firebaseApp.auth().onAuthStateChanged(user => {
 			if(user) {
-				console.log('user has signed in', user.uid);
+				// console.log('user has signed in', user.uid);
 				// isAuthenticated();
 				window.localStorage.setItem(storageKey, user.uid);
 				this.setState({uid: user.uid})
 
 			} else {
-				console.log('user has signed out');
+				// console.log('user has signed out');
 				window.localStorage.removeItem(storageKey);
 				this.setState({uid: null})
 			}
@@ -56,7 +56,10 @@ class Home extends Component {
 		return (
 		  	<Router>
 		  		<div>
+
 		  			<Switch>
+
+
 			  			<Route exact path="/" render={() => (
 				  		  this.state.uid ? (
 				  		    <App />
@@ -64,8 +67,20 @@ class Home extends Component {
 				  		    <SignIn />
 				  		  )
 				  		)}/>
-				  		<Route exact path="/signin" component={SignIn} />
-				  		<Route exact path="/signup" component={SignUp} />
+			  			<Route exact path="/signin" render={() => (
+				  		  this.state.uid ? (
+				  		  	<App />
+				  		  ) : (
+				  		    <SignIn />
+				  		  )
+				  		)}/>
+				  		<Route exact path="/signup" render={() => (
+				  			this.state.uid ? (
+				  				<App />
+				  			) : (
+				  				<SignUp />
+				  			)
+				  		)}/>
 				  		<Route component={NoMatch}/>
 				  	</Switch>
 				</div>

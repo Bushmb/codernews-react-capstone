@@ -21,8 +21,6 @@ class CardContainer extends Component {
   	  });
   	} else {
   		return (
-  			// <Alert color="info"><strong>Hold tight...</strong>the data is incoming.</Alert> 
-  			
   			<p>Hold tight...the data is incoming</p>
   		)
   	}

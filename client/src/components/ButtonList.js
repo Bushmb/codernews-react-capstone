@@ -23,7 +23,7 @@ class ButtonList extends Component {
 	render() {
 
 		return(
-			<div id="nav" className="button-list content-container" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+			<div id="nav" className="button-list content-container">
 		       <Button color={this.props.selectedTopic === "javascript" ? "primary" : "info"} value="javascript" onClick={this.handleClick}>Javascript</Button>{' '}
 		       <Button color={this.props.selectedTopic === "redux+react" ? "primary" : "info"} value="redux+react" onClick={this.handleClick}>React/Redux</Button>{' '}
 		       <Button color={this.props.selectedTopic === "perl" ? "primary" : "info"} value="perl" onClick={this.handleClick}>Perl</Button>{' '}

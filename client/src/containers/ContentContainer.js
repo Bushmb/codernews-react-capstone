@@ -20,6 +20,7 @@ class ContentContainer extends Component {
       <div className="content-container">
         <ButtonList />
         <CardContainer />
+        <a href="#" className="go-top">Go to Top</a>
       </div>
     );
   }
