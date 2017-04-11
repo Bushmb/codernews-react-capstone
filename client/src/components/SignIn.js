@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { firebaseApp } from '../firebase';
 import * as firebase from 'firebase';
+import './App.css';
 
 class SignIn extends Component {
 	constructor(props) {
@@ -19,8 +20,22 @@ class SignIn extends Component {
 		}
 	}
 
-	signIn() {
-		console.log('this.state', this.state)
+	handleKeyDown(e) {
+		if(e.keyCode === 13 && !this.state.user) {
+			this.signIn(e);
+		}
+	}
+
+	componentWillMount() {
+		document.addEventListener("keydown", this.handleKeyDown.bind(this));
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener("keydown", this.handleKeyDown.bind(this));
+	}
+
+	signIn(e) {
+		e.preventDefault();
 		const { email , password } = this.state;
 		firebaseApp.auth().signInWithEmailAndPassword(email, password)
 			.catch(error => {
@@ -35,6 +50,7 @@ class SignIn extends Component {
 		provider.setCustomParameters({
 			'prompt': 'select_account'
 		});
+
 		firebaseApp.auth().signInWithPopup(provider).then(result => {
 
 		  const token = result.credential.accessToken;
@@ -60,14 +76,13 @@ class SignIn extends Component {
 				<h5 className="text-center">Easily accessible news about the most common programming languages</h5>
 			    <div className="row">
 			        <div className="form_bg">
-			            <form>
+			            <form className="signInForm" onSubmit={(e) => this.signIn(e)}>
 			                 <h2 className="text-center">Sign In</h2>
 			                <br/>
 			                <div className="form-group">
 			                    <input
 			                    	className="form-control"
 			                    	type="text"
-			          
 			                    	placeholder="email"
 			                    	onChange={event => this.setState({email: event.target.value})}
 			                    />
@@ -76,7 +91,6 @@ class SignIn extends Component {
 			                    <input
 			                    	className="form-control"
 			                    	type="password"
-			                    	
 			                    	placeholder="password"
 			                    	onChange={event => this.setState({password: event.target.value})}
 			                    />
@@ -87,8 +101,8 @@ class SignIn extends Component {
 			                <div className="align-center">
 			                   <button
 	   								className="btn btn-success"
-	   								type="button"
-	   								onClick={() => this.signIn()}
+	   								type="submit"
+	   								
 	   							>
 	   							Sign In
 	   							</button>

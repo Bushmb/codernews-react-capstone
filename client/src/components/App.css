@@ -27,8 +27,44 @@
   background-color: lightgray;
 }
 
+.card-spacing {
+  padding: 10px;
+}
+
+.row {
+  padding: 5px;
+}
+.box{
+  padding: 5px;
+}
+
+.gutter-10.row {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+.gutter-10 > [class^="col-"], .gutter-10 > [class^=" col-"] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.classWithPad { margin:10px; padding:10px; }
+
+
 .content-container {
   background-color: lightgray;
+}
+
+/*.card:first-child {
+  margin-left: 15px;
+}*/
+
+.card-deck {
+  @include media-breakpoint-only(lg) {
+    column-count: 3;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 3;
+  }
 }
 
 /*.content-container h1 {
@@ -102,6 +138,7 @@
 }
 
 .opaque {
+  box-shadow: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(51,51,51,0.9);
   margin-bottom: 10px;

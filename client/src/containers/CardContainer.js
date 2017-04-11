@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // import { scrapedDataFetchData } from './actions/scrapedData';
 // import { Button, ButtonGroup, Card, CardImg, CardTitle, CardText, CardColumns, CardBlock } from 'reactstrap';
 import { CardColumns } from 'reactstrap';
+
 import '../components/App.css';
 
 import MakeCard from '../components/MakeCard';
@@ -38,9 +39,9 @@ class CardContainer extends Component {
 
 	return (
 		<div className='CardContainer'>
-				<CardColumns>
+				<div className='row'>
 					{this.layoutCards()}
-				</CardColumns>
+				</div>
 		</div>	
 	)
   }

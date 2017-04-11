@@ -53,6 +53,7 @@ class SignUp extends Component {
 			                    	placeholder="password"
 			                    	onChange={event => this.setState({password: event.target.value})}
 			                    />
+			                    <p>Password must be at least 6 characters</p>
 			                </div>
 			                <br/>
 			                <div>{this.state.error.message}</div>
