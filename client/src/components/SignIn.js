@@ -43,6 +43,16 @@ class SignIn extends Component {
 				this.setState({error});
 			})
 	}
+	// added to provide employers with a quick way to get into the app without signing
+	// or registering (as per capstone requirements)
+	quickSignIn(e) {
+		e.preventDefault();
+		firebaseApp.auth().signInWithEmailAndPassword('test@test.com', 'test1234')
+			.catch(error => {
+				console.log('error', error);
+				this.setState({error});
+			})
+	}
 
 	signInWithTwitter(e) {
 		e.preventDefault();
@@ -102,9 +112,15 @@ class SignIn extends Component {
 			                   <button
 	   								className="btn btn-success"
 	   								type="submit"
-	   								
 	   							>
 	   							Sign In
+	   							</button>
+			                   <button
+	   								className="btn btn-quicksignin"
+	   								type="button"
+	   								onClick={(e) => this.quickSignIn(e)}
+	   							>
+	   							Demo Sign In
 	   							</button>
 			                </div>
 			                <h4 className="ortext"><span>OR</span></h4>

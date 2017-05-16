@@ -25,6 +25,7 @@ class Header extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
     return (
       <div>
@@ -35,7 +36,7 @@ class Header extends Component {
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <button
-                  style={{ zIndex: 5000}}
+                  style={{ zIndex: 1000}}
                   className="btn btn-info btn-signout"
                   type="button"
                   onClick={() => this.signUserOut()}
@@ -52,3 +53,5 @@ class Header extends Component {
 }
 
 export default Header;
+
+

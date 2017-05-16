@@ -8,6 +8,7 @@ import '../index.css';
 import App from './App';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Landing from './Landing';
 
 // Used to locate uid in localStorage
 export const storageKey = 'KEY_FOR_LOCAL_STORAGE';
@@ -56,15 +57,13 @@ class Home extends Component {
 		return (
 		  	<Router>
 		  		<div>
-
 		  			<Switch>
-
-
+		  				
 			  			<Route exact path="/" render={() => (
 				  		  this.state.uid ? (
 				  		    <App />
 				  		  ) : (
-				  		    <SignIn />
+				  		    <Landing />
 				  		  )
 				  		)}/>
 			  			<Route exact path="/signin" render={() => (
@@ -81,6 +80,7 @@ class Home extends Component {
 				  				<SignUp />
 				  			)
 				  		)}/>
+				  		
 				  		<Route component={NoMatch}/>
 				  	</Switch>
 				</div>

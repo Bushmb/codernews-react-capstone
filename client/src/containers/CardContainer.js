@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { scrapedDataFetchData } from './actions/scrapedData';
 // import { Button, ButtonGroup, Card, CardImg, CardTitle, CardText, CardColumns, CardBlock } from 'reactstrap';
-import { CardColumns } from 'reactstrap';
+import { CardDeck } from 'reactstrap';
 
 import '../components/App.css';
 
@@ -39,9 +39,9 @@ class CardContainer extends Component {
 
 	return (
 		<div className='CardContainer'>
-				<div className='row'>
+				<CardDeck>
 					{this.layoutCards()}
-				</div>
+				</CardDeck>
 		</div>	
 	)
   }

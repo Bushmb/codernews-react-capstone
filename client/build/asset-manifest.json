@@ -1,11 +1,19 @@
 {
-  "main.css": "static/css/main.5efc1648.css",
-  "main.css.map": "static/css/main.5efc1648.css.map",
-  "main.js": "static/js/main.7145f27b.js",
-  "main.js.map": "static/js/main.7145f27b.js.map",
+  "main.css": "static/css/main.f420fbcc.css",
+  "main.css.map": "static/css/main.f420fbcc.css.map",
+  "main.js": "static/js/main.4b958b50.js",
+  "main.js.map": "static/js/main.4b958b50.js.map",
   "static/media/img1.jpg": "static/media/img1.9fba857e.jpg",
   "static/media/img2.jpg": "static/media/img2.4768aebf.jpg",
   "static/media/img3.jpg": "static/media/img3.ed509bb3.jpg",
   "static/media/img4.jpg": "static/media/img4.c6523f92.jpg",
-  "static/media/img5.jpg": "static/media/img5.7471afd7.jpg"
+  "static/media/img5.jpg": "static/media/img5.7471afd7.jpg",
+  "static/media/intro-bg5.jpg": "static/media/intro-bg5.da9fb240.jpg",
+  "static/media/login-screen-s.gif": "static/media/login-screen-s.9c4a62ab.gif",
+  "static/media/main-screen-s.gif": "static/media/main-screen-s.ed342b27.gif",
+  "static/media/mern-logos-small.jpg": "static/media/mern-logos-small.dee25a80.jpg",
+  "static/media/mern-logos.jpg": "static/media/mern-logos.bfe5b2e3.jpg",
+  "static/media/mockup-background.jpg": "static/media/mockup-background.76ad7197.jpg",
+  "static/media/origsite-screen-s.gif": "static/media/origsite-screen-s.e26cb8c2.gif",
+  "static/media/tweet-screen-s.gif": "static/media/tweet-screen-s.5a0120fe.gif"
 }

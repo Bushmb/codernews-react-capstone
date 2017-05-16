@@ -18,8 +18,22 @@ class SignUp extends Component {
 			}
 		}
 	}
+	handleKeyDown(e) {
+		if(e.keyCode === 13 && !this.state.user) {
+			this.signUp(e);
+		}
+	}
 
-	signUp() {
+	componentWillMount() {
+		document.addEventListener("keydown", this.handleKeyDown.bind(this));
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener("keydown", this.handleKeyDown.bind(this));
+	}
+
+	signUp(e) {
+		e.preventDefault();
 		const { email , password } = this.state;
 		firebaseApp.auth().createUserWithEmailAndPassword(email, password)
 			.catch(error => {
@@ -35,7 +49,7 @@ class SignUp extends Component {
 				<h5 className="text-center">Easily accessible news about the most common programming languages</h5>
 			    <div className="row">
 			        <div className="form_bg">
-			            <form>
+			            <form className="signUpForm" onSubmit={(e) => this.signUp(e)}>
 			                 <h2 className="text-center">Sign Up</h2>
 			                <br/>
 			                <div className="form-group">
@@ -61,8 +75,7 @@ class SignUp extends Component {
 			                <div className="align-center">
 			                   <button
 	   								className="btn btn-success"
-	   								type="button"
-	   								onClick={() => this.signUp()}
+	   								type="submit"
 	   							>
 	   							Sign Up
 	   							</button>
