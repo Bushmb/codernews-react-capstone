@@ -27,7 +27,7 @@ export default function MakeCard (props) {
 			<Card inverse className="opaque">
           <CardImg onError={e => {
               e.target.src = getRandomImage(random_images_array);
-            }} className="img" width="100%" src={img} alt="Card image cap" />
+            }} className="img" top width="100%" src={img} alt="Card image cap" />
           <CardBlock>
             <a className="title-link" href={props.orig_url} target="_blank">
               <CardTitle className="text-title">{props.title}</CardTitle>
