@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+
 import './Landing.css';
 
 class Footer extends Component {
+
 	render() {
 		return(
 			<footer>
@@ -9,7 +11,7 @@ class Footer extends Component {
 			        <p>Copyright &copy; CoderNews 2017</p>
 			    </div>
 			</footer>
-		)
+		);
 	}
 }
 

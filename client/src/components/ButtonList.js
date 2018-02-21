@@ -24,14 +24,24 @@ class ButtonList extends Component {
 
 		return(
 			<div id="nav" className="button-list content-container">
-		       <Button color={this.props.selectedTopic === "javascript" ? "primary" : "info"} value="javascript" onClick={this.handleClick}>Javascript</Button>{' '}
-		       <Button color={this.props.selectedTopic === "redux+react" ? "primary" : "info"} value="redux+react" onClick={this.handleClick}>React/Redux</Button>{' '}
+		       <Button 
+		       	color={this.props.selectedTopic === "javascript" ? "primary" : "info"} 
+		       	value="javascript" 
+		       	onClick={this.handleClick}>Javascript
+		       </Button>{' '}
+
+		       <Button 
+		       	color={this.props.selectedTopic === "redux+react" ? "primary" : "info"} 
+		       	value="redux+react" 
+		       	onClick={this.handleClick}> React/Redux 
+		       </Button>{' '}
+
 		       <Button color={this.props.selectedTopic === "perl" ? "primary" : "info"} value="perl" onClick={this.handleClick}>Perl</Button>{' '}
 		       <Button color={this.props.selectedTopic === "python" ? "primary" : "info"} value="python" onClick={this.handleClick}>Python</Button>{' '}
 		       <Button color={this.props.selectedTopic === "ruby" ? "primary" : "info"} value="ruby" onClick={this.handleClick}>Ruby</Button>{' '}
 		       <Button color={this.props.selectedTopic === "angular" ? "primary" : "info"} value="angular" onClick={this.handleClick}>Angular</Button>
 		    </div>
-		)
+		);
 	}
 }
 

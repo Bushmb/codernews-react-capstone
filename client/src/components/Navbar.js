@@ -11,7 +11,9 @@ class Navbar extends Component {
 			        Menu <i className="fa fa-bars"></i>
 			    </button>
 			    <div className="container">
-			        <a className="navbarL-brand" href="#page-top">Coder News</a>
+			    	<div className="brand-container">
+			        	<a className="navbarL-brand" href="#page-top">Coder News</a>
+			        </div>
 			        <div className="collapse navbar-collapse" id="navbarExample">
 			            <ul className="navbar-nav ml-auto">
 			                <li className="nav-item">

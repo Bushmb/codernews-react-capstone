@@ -24,25 +24,30 @@ export default function MakeCard (props) {
   return (
   	<div className="col-lg-4 col-md-6 col-xs-12">
   		<div className="card-spacing">
-	  	<Card inverse className="opaque">
-			    <CardImg onError={(e) => {e.target.src=getRandomImage(random_images_array)}} className="img" top width="100%" src={img} alt="Card image cap" />
-			    <CardBlock>
-			      <a className="title-link" href={props.orig_url}>
-			      	<CardTitle className="text-title">{ props.title }</CardTitle>
-			      </a>
-			      <hr className="blue-line" />
-			      <CardText>
-			      	<small className="text-muted-date">{ props.date }</small>
-			      	<small className="text-muted-readtime">{ props.mins_check }</small>
-				  </CardText>
-			      <CardText className="text-description">{ props.desc }</CardText>
-			  			           	
-			    </CardBlock>
-			    <CardFooter>
-			    	<div className="link-buttons" style={{ float: 'right' }}>&#x1F499; {props.points}</div>
-			    	<MyModal className="link-buttons" style={{ float: 'right' }} url={props.orig_url} title={props.title} />
-			   	</CardFooter>
-		</Card>
+			<Card inverse className="opaque">
+          <CardImg onError={e => {
+              e.target.src = getRandomImage(random_images_array);
+            }} className="img" width="100%" src={img} alt="Card image cap" />
+          <CardBlock>
+            <a className="title-link" href={props.orig_url} target="_blank">
+              <CardTitle className="text-title">{props.title}</CardTitle>
+            </a>
+            <hr className="blue-line" />
+            <CardText>
+              <small className="text-muted-date">{props.date}</small>
+              <small className="text-muted-readtime">
+                {props.mins_check}
+              </small>
+            </CardText>
+            <CardText className="text-description">{props.text}...</CardText>
+          </CardBlock>
+          <CardFooter>
+            <div className="link-buttons" style={{ float: "right" }}>
+              &#x1F499; {props.points}
+            </div>
+            <MyModal className="link-buttons" style={{ float: "right" }} url={props.orig_url} title={props.title} />
+          </CardFooter>
+      </Card>
 		</div>
 	</div>
   )

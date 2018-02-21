@@ -4,12 +4,14 @@ export function scrapedDataHasErrored(bool) {
         hasErrored: bool
     };
 }
+
 export function scrapedDataIsLoading(bool) {
     return {
         type: 'SCRAPEDDATA_IS_LOADING',
         isLoading: bool
     };
 }
+
 export function scrapedDataFetchDataSuccess(scrapedData) {
     return {
         type: 'SCRAPEDDATA_FETCH_DATA_SUCCESS',

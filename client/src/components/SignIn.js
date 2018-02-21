@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { firebaseApp } from '../firebase';
 import * as firebase from 'firebase';
@@ -43,8 +43,7 @@ class SignIn extends Component {
 				this.setState({error});
 			})
 	}
-	// added to provide employers with a quick way to get into the app without signing
-	// or registering (as per capstone requirements)
+	// added to provide employers with a quick way to get into the app without signing in or registering (as per capstone requirements)
 	quickSignIn(e) {
 		e.preventDefault();
 		firebaseApp.auth().signInWithEmailAndPassword('test@test.com', 'test1234')

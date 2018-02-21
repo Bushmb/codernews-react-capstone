@@ -6,6 +6,7 @@ export function scrapedDataHasErrored(state = false, action) {
             return state;
     }
 }
+
 export function scrapedDataIsLoading(state = false, action) {
     switch (action.type) {
         case 'SCRAPEDDATA_IS_LOADING':
@@ -14,6 +15,7 @@ export function scrapedDataIsLoading(state = false, action) {
             return state;
     }
 }
+
 export function scrapedData(state = [], action) {
     switch (action.type) {
         case 'SCRAPEDDATA_FETCH_DATA_SUCCESS':

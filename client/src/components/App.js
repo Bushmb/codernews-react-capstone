@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
+import { withRouter } from 'react-router-dom';
+
 import Header from './Header';
 import ContentContainer from '../containers/ContentContainer';
-import { withRouter } from 'react-router-dom'
+import './App.css';
 
 class App extends Component {
+
   componentDidMount() {
   	this.props.history.push('/');
   }
+
   render() {
     return (
       <div className="content-container">
@@ -17,6 +20,7 @@ class App extends Component {
       </div>
     );
   }
+  
 }
 
 export default withRouter(App);
