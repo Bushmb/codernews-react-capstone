@@ -52,7 +52,7 @@ Then open [`localhost:3000`](http://localhost:3000) in a browser if a window is 
   <li>Node.js + Express.js (web server)</li>
   <li>MongoDB (database)</li>
 </ul>
-<h3>Seperate (always-on) Server
+<h3>Seperate (always-on) Server</h3>
 <ul>
   <li>Node.js + Express.js (web server)</li>
   <li>MongoDB (database)</li>
