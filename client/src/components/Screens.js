@@ -35,7 +35,4 @@
  }
 
  export default Screens; 
-
-
-            // className="container content-section text-center"
                 

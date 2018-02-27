@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-
 import ButtonList from '../components/ButtonList';
 import CardContainer from './CardContainer';
-
 import { connect } from 'react-redux';
 import { scrapedDataFetchData } from '../actions/scrapedData';
 
-// function to pass to buttons which was clicked
-// pass down our stories to the card container
+// function to pass to buttons which one was clicked
+// and passes down our stories to the card container
 
 class ContentContainer extends Component {
   componentDidMount () {

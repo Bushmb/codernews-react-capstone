@@ -11,8 +11,6 @@ const scrapedData = require('../models/scrapedData');
 
 function fetchHackerNewsAPI() {
 
-	// scrapedData.remove({}, function(err,removed) {
-	// });
 	console.log("Request to Hacker News API started");
 
 	const topics = ['javascript', 'redux+react', 'perl', 'python', 'ruby', 'angular'];
@@ -121,8 +119,6 @@ function fetchHTML(results) {
 				if (img == "http://www.syntaxsuccess.com/img/bio.jpg") {
 					img = "noimage";
 				}
-				// console.log("IMAGE TAG!", img)
-				// "https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180";
 			
 				// Create unique story id from stripped and shortened url
 				const story_id = result.pageUrl.replace(/[^a-z0-9]+/ig, "").substring(5, 40);
@@ -157,7 +153,7 @@ function fetchHTML(results) {
 		   	    if(isBlocked === "No") {
 
 			   	    if(Object.keys(story).every(key => story[key])) {
-		   	    	    // console.log("STORY_ID!!!!!", story.story_id);
+		   	    
 			   	    	scrapedData.count({story_id: story.story_id}, function (err, count){ 
 			   	    	
 			   	    	    if(!count) {

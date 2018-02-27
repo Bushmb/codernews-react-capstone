@@ -19,11 +19,6 @@ class MyModal extends Component {
     });
   }
 
-  // click(e) {
-  //   e.preventDefault();
-  //   window.open(this.props.url, '_blank');
-  // }
-
   render() {
     const options = { 
       hashtag: "CodingNews",
@@ -50,7 +45,5 @@ class MyModal extends Component {
     );
   }
 }
-
-// <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Found an interesting article: " data-via="mbcoder" data-hashtags="codernews" data-related="mbcoder" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 export default MyModal;

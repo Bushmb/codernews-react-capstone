@@ -71,8 +71,6 @@ class SignIn extends Component {
 
 		  const errorCode = error.code;
 		  const errorMessage = error.message;
-		  // const email = error.email;
-		  // const credential = error.credential;
 		  this.setState({errorCode, errorMessage});
 
 		});

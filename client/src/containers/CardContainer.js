@@ -6,6 +6,19 @@ import '../components/App.css';
 
 import MakeCard from '../components/MakeCard';
 
+const divStyle = {
+	marginTop: '40px',
+	marginBottom: '40px',
+	marginLeft: 'auto',
+	marginRight: 'auto' 
+};
+
+const pStyle = {
+	fontSize: '20px',
+	textAlign: 'center',
+	color: 'black'
+};
+
 // Container component
 class CardContainer extends Component {
 
@@ -19,7 +32,9 @@ class CardContainer extends Component {
   	  });
   	} else {
   		return (
-  			<p>Hold tight...the data is incoming</p>
+			<div style={divStyle}>
+  				<p style={pStyle}>Hold tight...the data is incoming</p>
+			</div>
   		)
   	}
 
@@ -28,10 +43,18 @@ class CardContainer extends Component {
   render() {
   	
   	if (this.props.hasErrored) {
-        return <p>Sorry! There was an error loading the items</p>;
+        return (
+			<div style={divStyle}>
+				<p style={pStyle}>Sorry! There was an error loading the items</p>
+			</div>
+		)
     }
     if (this.props.isLoading) {
-        return <p>Loading…</p>;
+		return (
+			<div style={divStyle}>
+				<p style={pStyle}>Loading…</p>
+			</div>
+		)
     }
 
 	return (

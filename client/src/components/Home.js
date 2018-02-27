@@ -13,7 +13,6 @@ import Landing from './Landing';
 // Used to locate uid in localStorage
 export const storageKey = 'KEY_FOR_LOCAL_STORAGE';
 
-
 export const isAuthenticated = () => {
 
 	return !!firebaseApp.auth().currentUser || !!localStorage.getItem(storageKey);
@@ -37,19 +36,18 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
+
 		firebaseApp.auth().onAuthStateChanged(user => {
 			if(user) {
-				// console.log('user has signed in', user.uid);
-				// isAuthenticated();
 				window.localStorage.setItem(storageKey, user.uid);
 				this.setState({uid: user.uid})
 
 			} else {
-				// console.log('user has signed out');
 				window.localStorage.removeItem(storageKey);
 				this.setState({uid: null})
 			}
 		})
+		
 	}
 
 	render() {

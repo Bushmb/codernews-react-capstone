@@ -50,7 +50,6 @@ p {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
   font-family: 'Play', sans-serif;
-  /*font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   background-color: black; }
   #mainNav .navbar-toggler {
     color: white;
@@ -113,16 +112,12 @@ p {
   background-size: cover;
   -o-background-size: cover; }
   .masthead .intro-body {
-   /* display: table-cell;*/
     height: 200px;
     vertical-align: middle; }
     .masthead .intro-body .brand-heading {
-      /*background-color: rgba(0, 0, 0, 0.5);*/
       color: #31708f;
-      /*color: #589BB8;*/
       font-size: 55px; }
     .masthead .intro-body .intro-text {
-      /*background-color: rgba(0, 0, 0, 0.2);*/
       color: black;
       font-size: 18px; }
   @media (min-width: 768px) {
@@ -133,7 +128,6 @@ p {
         margin-top: 200px;
         text-align: right;
         color: #31708F;
-        /*color: #589BB8;*/
         font-size: 100px; }
       .masthead .intro-body .intro-text {
         text-align: right;
@@ -275,7 +269,6 @@ a:active {
 .btn {
   text-transform: uppercase;
   font-family: 'Play', sans-serif;
-  /*font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   font-weight: 400;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
